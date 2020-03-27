@@ -7,6 +7,19 @@ Google is able to detect scanners/scrapers like this and ban it, if too many req
 also if an invalid User-Agent is being used. 
 This project is a pretty good way to learn and adapt to those (and more) situations/detection and work your way around it.
 
+#### What's a dork scanner anyway?
+
+Dork Scanner are mostly used for scraping web search engines with 'dorks' you provide, in order to find vulnerable urls, web urls or even classified data.
+Dorks are some kind of special keywords - such as error messages, parameters or even just normal words, which search engines are able to crawl and index.
+
+Example: `"Index of /password"`  
+`"mysql dump" filetype:sql`  
+`"Welcome to Administration" "General" "Local Domains" "SMTP Authentication" inurl:admin`
+
+and so on.
+
+To retrieve the latet google dork list, I recommend [the latest Google Dork List](https://gbhackers.com/latest-google-dorks-list/).
+
 #### How does it work?
 
 You can initiated any google search request by `https://www.google.de/search` + `q` + `start`.
@@ -34,7 +47,58 @@ Output of group: http://www.army.cz/scripts/detail.php%3Fid%3D5762`
 
 ### Usage
 
-`python3 scanner.py <keyword>`
+`python3 scanner.py <keyword> <pages>`
+
+`<keyword>` -> keyword 
+
+`pages` -> number of pages
+
+e.g. `python3 scanner.py Fortnite 3`
+
+Code shall return at least 30 search results
+
+`Starting Docking Scanner
+ Looking for keyword Fortnite and returning 3 page/s of results.
+https://www.facebook.com/FortniteGame/
+https://www.epicgames.com/fortnite/en-US/mobile/android
+https://www.pcgames.de/Fortnite-Spiel-16272/News/Update-bringt-Aurum-Skin-Gratis-Items-Herausforderungen-1346416/
+https://www.giga.de/tipp/fortnite-steamy-stacks-seilrutsche-geheimgang-fundorte/
+https://www.youtube.com/channel/UClG8odDC8TS6Zpqk9CGVQiQ
+https://paninishop.de/games-film/fortnite/
+https://www.rnd.de/themen/fortnite/
+https://www.epicgames.com/fortnite/de/mobile/android/get-started
+https://www.epicgames.com/fortnite/de/download
+https://www.epicgames.com/fortnite/de/chapter2
+https://accounts.google.com/ServiceLogin%3Fcontinue%3Dhttps://www.google.de/search%253Fq%253DFortnite%2526start%253D10%26hl%3Dde
+https://accounts.google.com/ServiceLogin%3Fcontinue%3Dhttps://www.google.de/search%253Fq%253DFortnite%2526start%253D20%26hl%3Dde
+https://www.amazon.de/Deep-Silver-Fortnite-PC/dp/B071GNYTG6
+https://de.wikipedia.org/wiki/Fortnite
+https://www.buffed.de/Fortnite-Spiel-16272/
+https://www.epicgames.com/fortnite/de/news
+https://www.xbox.com/de-DE/games/fortnite
+https://twitter.com/fortnitegame
+https://accounts.google.com/ServiceLogin%3Fcontinue%3Dhttps://www.google.de/search%253Fq%253DFortnite%2526start%253D0%26hl%3Dde
+https://www.youtube.com/watch%3Fv%3Dgb45zVHDxbE
+https://www.kicker.de/1000002052186/video
+https://support.google.com/webmasters/answer/7489871%3Fhl%3Dde
+https://www.pcgames.de/Fortnite-Spiel-16272/News/Details-Patch-Notes-Update-1221-das-steckt-drin-1346266/
+https://epicgames.helpshift.com/a/fortnite/
+https://www.amazon.com/stores/page/92DB4595-1191-4F3E-93AE-C43B20671040
+https://www.playstation.com/de-de/games/fortnite-ps4/
+https://www.ingame.de/guides/fortnite-battle-royale-modus-epic-games-cary-season-event-streamer-koop-survival-twitch-youtube-13593712.html
+https://www.twitch.tv/directory/game/Fortnite
+https://www.epicgames.com/fortnite
+https://www.epicgames.com/fortnite/de/home
+http://fortnitegame.com/
+https://webhelm.de/fortnite-battle-royale/
+https://mein-mmo.de/fortnite/
+https://de.wikipedia.org/wiki/Unreal_Engine_4
+https://www.tz.de/leben/games/videospiele-fortnite-epic-games-battle-royale-update-zielhilfe-betrug-zr-13593935.html
+https://www.youtube.com/watch%3Fv%3DFaiDbdwE0PI
+https://apps.apple.com/de/app/fortnite/id1261357853
+Found 37 results.`
+
+I don't recommend to scrape more than 5 pages, otherwise Google will ban the IP temporarily, making the script unusable.
 
 ### Misc.
 
