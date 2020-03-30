@@ -18,7 +18,9 @@ Example: `"Index of /password"`
 
 and so on.
 
-To retrieve the latet google dork list, I recommend [the latest Google Dork List](https://gbhackers.com/latest-google-dorks-list/).
+Short saying: You're able to find and access sensitive data and information, even if you're not allowed to. Those tools are mainly used by security researchers or hackers.
+
+To retrieve the latest google dork list, I recommend [the latest Google Dork List](https://gbhackers.com/latest-google-dorks-list/).
 
 #### How does it work?
 
@@ -26,7 +28,7 @@ You can initiated any google search request by `https://www.google.de/search` + 
 While `q` stays for the following keyword, `start` pretty much only means the current page number of the search result site of google.
 
 Since `q` and `start` are working and used as parameters, the request can initiated easily with 3 simple commands.
-For the first ten google search results: `https://www.google.de/search` + `Spaghetti` + `0`
+For the first ten google search results: `https://www.google.de/search` + `Fortnite` + `0`
 Don't be confused about the 0, but google lists its pages multiplied by 10, starting by 0 for the first page, 10 for the second page, 20 for the third page... and so on.
 
 Next step is to retrieve the URLs of all sites of the result page.
@@ -41,7 +43,7 @@ Everthing after ``amp`` is part of Googles own engine and is neither required to
 To remove this chunk from the URL, regular expression (Regex) comes to work and not only looks for patterns like this but also removes and reformat the URL.  
 `url\?q=(.+?)\&`  matches the characters `url` literally (case sensitive) and `\?` but with an escape sequence, `q=` literally, puts everything after that `(.+?)` in a group until it hits the breaking point `\&`.
 
-Since regex puts everthing after `?q=` until `\&` in group, this group can be called and used as a variable.
+Since regex puts everything after `?q=` until `\&` in group, this group can be called and used as a variable.
 
 Output of group: http://www.army.cz/scripts/detail.php%3Fid%3D5762`
 
@@ -57,8 +59,8 @@ e.g. `python3 scanner.py Fortnite 3`
 
 Code shall return at least 30 search results
 
-`Starting Docking Scanner
- Looking for keyword Fortnite and returning 3 page/s of results.
+```Starting Docking Scanner
+Looking for keyword Fortnite and returning 3 page/s of results.
 https://www.facebook.com/FortniteGame/  
 https://www.epicgames.com/fortnite/en-US/mobile/android  
 https://www.pcgames.de/Fortnite-Spiel-16272/News/Update-bringt-Aurum-Skin-Gratis-Items-Herausforderungen-1346416/  
@@ -96,7 +98,7 @@ https://de.wikipedia.org/wiki/Unreal_Engine_4
 https://www.tz.de/leben/games/videospiele-fortnite-epic-games-battle-royale-update-zielhilfe-betrug-zr-13593935.html  
 https://www.youtube.com/watch%3Fv%3DFaiDbdwE0PI  
 https://apps.apple.com/de/app/fortnite/id1261357853  
-Found 37 results.`  
+Found 37 results.```
 
 I don't recommend to scrape more than 5 pages, otherwise Google will ban the IP temporarily, making the script unusable.
 
